@@ -1,7 +1,0 @@
-[[redirects]]
-  from = "https://pizzafrontend.netlify.app/api/*"
-  to = "https://pizzabackend-dlmx.onrender.com/:splat"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-

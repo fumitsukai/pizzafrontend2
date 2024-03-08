@@ -20,6 +20,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Footer";
 
+const BASE_URL = "https://pizzabackend-dlmx.onrender.com";
+
 const Register = () => {
   const [users, setUsers] = useState({
     email: "",
@@ -37,7 +39,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/api/users", users)
+      .post(`${BASE_URL}/api/users`, users)
       .then((response) => toast("Welcome!"))
       .catch((err) => toast.error(err.response.data.message));
   };

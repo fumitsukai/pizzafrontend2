@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Footer";
 
+const BASE_URL = "https://pizzabackend-dlmx.onrender.com";
+
 const Login = () => {
   const [users, setUsers] = useState({
     email: "",
@@ -30,7 +32,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/api/users/login", users)
+      .post(`${BASE_URL}/api/users/login`, users)
       //adding logged user ID into local storage to show the correct page
       .then((response) => {
         localStorage.setItem("userID", response.data.data[0].id);
